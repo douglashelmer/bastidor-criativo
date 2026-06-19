@@ -151,28 +151,35 @@
     }
 
     /* ── WhatsApp button ── */
+    @keyframes wpp-pulse {
+      0%   { box-shadow: 0 0 0 0   #25D36666; }
+      70%  { box-shadow: 0 0 0 14px #25D36600; }
+      100% { box-shadow: 0 0 0 0   #25D36600; }
+    }
+
     .cta {
       display: inline-flex;
       align-items: center;
-      gap: .625rem;
+      gap: .75rem;
       background: var(--wpp);
       color: #fff;
       font-family: inherit;
-      font-size: 1rem;
+      font-size: 1.125rem;
       font-weight: 700;
-      padding: .875rem 1.75rem;
-      border-radius: .5rem;
+      padding: 1.125rem 2.25rem;
+      border-radius: .625rem;
       text-decoration: none;
       border: none;
       cursor: pointer;
       align-self: flex-start;
-      transition: transform .15s ease, box-shadow .15s ease;
-      box-shadow: 0 0 0 0 #25D36600;
+      transition: transform .15s ease, filter .15s ease;
+      animation: wpp-pulse 1.8s ease-out infinite;
     }
 
     .cta:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px #25D36640;
+      filter: brightness(1.1);
+      animation-play-state: paused;
     }
 
     .cta:focus-visible {
@@ -181,8 +188,8 @@
     }
 
     .cta svg {
-      width: 1.125rem;
-      height: 1.125rem;
+      width: 1.375rem;
+      height: 1.375rem;
       flex-shrink: 0;
     }
 
